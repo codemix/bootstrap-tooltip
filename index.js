@@ -1,7 +1,7 @@
 function(){
   var jQuery = require('jquery');
   /* ===========================================================
-   * bootstrap-tooltip.js v2.2.1
+   * bootstrap-tooltip.js v2.2.2
    * http://twitter.github.com/bootstrap/javascript.html#tooltips
    * Inspired by the original jQuery.tipsy by Jason Frame
    * ===========================================================
@@ -252,6 +252,8 @@ function(){
    /* TOOLTIP PLUGIN DEFINITION
     * ========================= */
   
+    var old = $.fn.tooltip
+  
     $.fn.tooltip = function ( option ) {
       return this.each(function () {
         var $this = $(this)
@@ -273,6 +275,15 @@ function(){
     , title: ''
     , delay: 0
     , html: false
+    }
+  
+  
+   /* TOOLTIP NO CONFLICT
+    * =================== */
+  
+    $.fn.tooltip.noConflict = function () {
+      $.fn.tooltip = old
+      return this
     }
   
   }(jQuery);
