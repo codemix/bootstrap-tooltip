@@ -1,0 +1,13 @@
+{
+  "name": "bootstrap-tooltip",
+  "repo": "codemix/bootstrap-tooltip",
+  "description": "The tooltip plugin from twitter bootstrap",
+  "version": "2.3.1",
+  "dependencies": {
+    "component/jquery": "*"
+  },
+  "scripts": [
+    "index.js"
+  ],
+  "main": "index.js"
+}
