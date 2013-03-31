@@ -1,7 +1,7 @@
 function(){
   var jQuery = require('jquery');
   /* ===========================================================
-   * bootstrap-tooltip.js v2.0.1
+   * bootstrap-tooltip.js v2.0.2
    * http://twitter.github.com/bootstrap/javascript.html#tooltips
    * Inspired by the original jQuery.tipsy by Jason Frame
    * ===========================================================
@@ -208,7 +208,7 @@ function(){
         title = $e.attr('data-original-title')
           || (typeof o.title == 'function' ? o.title.call($e[0]) :  o.title)
   
-        title = title.toString().replace(/(^\s*|\s*$)/, "")
+        title = (title || '').toString().replace(/(^\s*|\s*$)/, "")
   
         return title
       }
