@@ -1,7 +1,7 @@
 function(){
   var jQuery = require('jquery');
   /* ===========================================================
-   * bootstrap-tooltip.js v2.1.1
+   * bootstrap-tooltip.js v2.2.0
    * http://twitter.github.com/bootstrap/javascript.html#tooltips
    * Inspired by the original jQuery.tipsy by Jason Frame
    * ===========================================================
@@ -121,9 +121,9 @@ function(){
           inside = /in/.test(placement)
   
           $tip
-            .remove()
+            .detach()
             .css({ top: 0, left: 0, display: 'block' })
-            .appendTo(inside ? this.$element : document.body)
+            .insertAfter(this.$element)
   
           pos = this.getPosition(inside)
   
@@ -146,7 +146,7 @@ function(){
           }
   
           $tip
-            .css(tp)
+            .offset(tp)
             .addClass(placement)
             .addClass('in')
         }
@@ -168,18 +168,18 @@ function(){
   
         function removeWithAnimation() {
           var timeout = setTimeout(function () {
-            $tip.off($.support.transition.end).remove()
+            $tip.off($.support.transition.end).detach()
           }, 500)
   
           $tip.one($.support.transition.end, function () {
             clearTimeout(timeout)
-            $tip.remove()
+            $tip.detach()
           })
         }
   
         $.support.transition && this.$tip.hasClass('fade') ?
           removeWithAnimation() :
-          $tip.remove()
+          $tip.detach()
   
         return this
       }
@@ -237,8 +237,9 @@ function(){
         this.enabled = !this.enabled
       }
   
-    , toggle: function () {
-        this[this.tip().hasClass('in') ? 'hide' : 'show']()
+    , toggle: function (e) {
+        var self = $(e.currentTarget)[this.type](this._options).data(this.type)
+        self[self.tip().hasClass('in') ? 'hide' : 'show']()
       }
   
     , destroy: function () {
@@ -271,9 +272,8 @@ function(){
     , trigger: 'hover'
     , title: ''
     , delay: 0
-    , html: true
+    , html: false
     }
   
   }(jQuery);
-  
 }
