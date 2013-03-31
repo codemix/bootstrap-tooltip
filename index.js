@@ -1,7 +1,7 @@
 function(){
   var jQuery = require('jquery');
   /* ===========================================================
-   * bootstrap-tooltip.js v2.1.0
+   * bootstrap-tooltip.js v2.1.1
    * http://twitter.github.com/bootstrap/javascript.html#tooltips
    * Inspired by the original jQuery.tipsy by Jason Frame
    * ===========================================================
