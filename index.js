@@ -1,4 +1,4 @@
-function(){
+(function(){
   var jQuery = require('jquery');
   /* ===========================================================
    * bootstrap-tooltip.js v2.3.1
@@ -362,4 +362,4 @@ function(){
   
   }(jQuery);
   
-}()
+})()
