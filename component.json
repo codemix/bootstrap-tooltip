@@ -2,7 +2,7 @@
   "name": "bootstrap-tooltip",
   "repo": "codemix/bootstrap-tooltip",
   "description": "The tooltip plugin from twitter bootstrap",
-  "version": "2.3.1",
+  "version": "3.0.0",
   "dependencies": {
     "components/jquery": "*"
   },
