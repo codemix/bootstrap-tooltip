@@ -1,4 +1,4 @@
-(function(){
+;(function(){
   /* ========================================================================
    * Bootstrap: tooltip.js v3.0.2
    * http://getbootstrap.com/javascript/#tooltip
@@ -386,4 +386,4 @@
   
   }(jQuery);
   
-})()
+})();
